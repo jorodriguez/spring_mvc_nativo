@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+	
+	<h:head>
+	</h:head>
+	<h:body>		
+		<h:form>		
+		<p:messages></p:messages>
+		
+			<p:outputLabel for="autocompleteId"> </p:outputLabel>
+			<p:autoComplete
+			id="autocompleteId"
+				completeMethod="#{autoCompleteBean.autoCompletar}"
+				value="#{autoCompleteBean.seleccionados}"
+				queryDelay="1000"
+				minQueryLength="2"
+				multiple="true"
+				unique="true"								 
+				>			
+				 <p:ajax 
+				 event="itemSelect"
+				 update="dt" />				 
+			</p:autoComplete>
+			
+			<p:dataTable
+					id="dt"
+					var="data"
+					value="#{autoCompleteBean.seleccionados}"
+			>
+			<p:column headerText="Lenguajes">
+				<h:outputLabel value="#{data}"> </h:outputLabel>							
+			</p:column>
+		</p:dataTable>
+			
+		</h:form>
+	</h:body>	
+</html>

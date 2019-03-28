@@ -1,0 +1,28 @@
+package com.example.demo.mapper;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import mx.ihsa.springmvc.model.Login;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import mx.ihsa.springmvc.model.Login;
+
+public class LoginMapper implements RowMapper<Login> {
+
+	@Override
+	public Usario mapRow(ResultSet rs, int rowNum) throws SQLException {
+		Usario login = new Usario();
+		login.setUsuario(rs.getString("usuario"));
+		login.setPassword(rs.getString("password"));
+	return login;
+
+	}
+	
+}

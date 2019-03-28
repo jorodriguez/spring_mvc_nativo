@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form id="form_principal">
+		<p:growl showDetail="true" showSummary="true"></p:growl>
+		<p:messages></p:messages>
+		
+		<p:commandButton
+			value="Nuevo"
+			actionListener="#{tipoMovimientoBean.iniciarNuevo(e)}"
+			update="form_captura"
+			oncomplete="PF('dialogCaptura').show()"
+		/>
+		
+		<p:commandButton
+			value="Modificar"
+			actionListener="#{tipoMovimientoBean.iniciarNuevo(e)}"
+			update="form_modificar"
+			process="form_modificar"
+			oncomplete="PF('dialogModificar').show()"
+		/>
+		
+		
+		<p:commandButton
+			value="Eliminar"
+			actionListener="#{tipoMovimientoBean.eliminar(e)}"
+			update="singleDT"			
+		/>			
+		
+		<p:dataTable id="singleDT" 
+			var="data" 
+			value="#{tipoMovimientoBean.lista}"
+			selection="#{tipoMovimientoBean.seleccion}"
+			rowKey="#{data.idTipMov}"									 
+			>			
+			<f:facet name="header">		
+			
+            Tipos de Movimientos
+        	</f:facet>
+        	 <p:column selectionMode="single" style="width:16px;text-align:center"/>        	
+			<p:column headerText="Id">
+				<h:outputText value="#{data.idTipMov}" />
+			</p:column>
+			<p:column headerText="Descripción">
+				<h:outputText value="#{data.descTipMov}" />
+			</p:column>				
+		</p:dataTable>	
+		<h:outputLabel
+			id="id_seleccion" 
+		value="#{tipoMovimientoBean.seleccion.descTipMov}"></h:outputLabel>
+				
+	</h:form>
+	
+	
+		<h:form id="form_captura">
+						<p:dialog 
+                            widgetVar="dialogCaptura" 
+                            modal="true" 
+                            showEffect="fade"
+                            
+                            hideEffect="fade" 
+                            draggable="false"
+                            responsive="true"                                  
+                            resizable="true">
+                                                        
+                            <f:facet name="header">
+                                <h4>Captura de Tipo de Movimiento</h4>
+                            </f:facet>
+                            
+                            <p:panelGrid columns="1">
+                            	<h:outputLabel value="Id"></h:outputLabel>
+                            	<p:inputText placeholder="id" 
+                            				value="#{tipoMovimientoBean.seleccion.idTipMov}" >
+                            	 </p:inputText>
+                            	 
+                            	 <h:outputLabel value="Nombre"></h:outputLabel>
+                            	 <p:inputText placeholder="Nombre" 
+                            				value="#{tipoMovimientoBean.seleccion.descTipMov}" >
+                            	 </p:inputText>                            	 
+                            </p:panelGrid>                             
+                            <div>                                
+                                <p:commandLink value="Guardar"                                                       
+                                               styleClass="btn btn-success"
+                                               actionListener="#{tipoMovimientoBean.guardar(e)}"
+                                               oncomplete="PF('dialogCaptura').hide()"
+                                               update="form_principal"
+                                               >                                    
+                                </p:commandLink>
+                                <p:commandLink value="Cancelar"                                                        
+                                               oncomplete="PF('dialogCaptura').hide()"
+                                               >
+                                </p:commandLink>                                    
+                            </div>                                                    
+                                                                                   
+                        </p:dialog>	
+	</h:form>
+	
+	
+	<h:form id="form_modificar">
+					<p:dialog 
+                            widgetVar="dialogModificar" 
+                            modal="true" 
+                            showEffect="fade"                            
+                            hideEffect="fade" 
+                            draggable="false"
+                            responsive="true"                                  
+                            resizable="true">
+                                                        
+                            <f:facet name="header">
+                                <h4>Modificar de Tipo de Movimiento</h4>
+                            </f:facet>
+                            
+                            <p:panelGrid columns="1">
+                            	<h:outputLabel value="Id"></h:outputLabel>
+                            	<p:inputText placeholder="id"
+                            				disabled="true" 
+                            				value="#{tipoMovimientoBean.seleccion.idTipMov}" >
+                            	 </p:inputText>                            	 
+                            	 <h:outputLabel value="Nombre"></h:outputLabel>
+                            	 <p:inputText placeholder="Nombre" 
+                            				value="#{tipoMovimientoBean.seleccion.descTipMov}" >
+                            	 </p:inputText>                            	 
+                            </p:panelGrid>                             
+                            <div>                                
+                                <p:commandButton value="Modificar"                                                       
+                                               styleClass="btn btn-success"
+                                               actionListener="#{tipoMovimientoBean.modificar(e)}"
+                                               oncomplete="PF('dialogModificar').hide()"
+                                               update="form_principal"
+                                               >                                    
+                                </p:commandButton>
+                                <p:commandButton value="Cancelar"                                                        
+                                               oncomplete="PF('dialogModificar').hide()"
+                                               >
+                                </p:commandButton>                                    
+                            </div>                                                    
+                                                                                   
+                        </p:dialog>	
+	</h:form>
+	
+</h:body>
+</html>

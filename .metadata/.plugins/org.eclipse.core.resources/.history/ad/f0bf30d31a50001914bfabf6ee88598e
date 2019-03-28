@@ -1,0 +1,5 @@
+package mx.proyecttest.my.beans;
+
+public class UsuarioBean {
+
+}

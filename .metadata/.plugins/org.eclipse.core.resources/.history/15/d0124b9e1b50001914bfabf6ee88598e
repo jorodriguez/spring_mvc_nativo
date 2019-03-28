@@ -1,0 +1,32 @@
+package mx.proyecttest.my.beans;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Named;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import mx.proyecttest.my.model.Usuario;
+import mx.proyecttest.my.service.UsuarioService;
+
+@Named
+public class UsuarioBean {
+
+	private List<Usuario> lista; 
+	
+	@Autowired
+	private UsuarioService usuarioService;
+	
+	@PostConstruct
+	private void init() {
+		System.out.println("Iniciando  ");
+		this.lista = usuarioService.obtenerUsuarios();
+	}
+	
+	
+	public List<Usuario> getLista(){
+		return lista;
+	}
+	
+}

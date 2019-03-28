@@ -1,0 +1,13 @@
+mx/ihsa/soap/webservice/InsertarResponse.class
+mx/ihsa/soap/webservice/PerfilWebservice.class
+mx/ihsa/soap/webservice/ServicioWebService.class
+mx/ihsa/soap/webservice/Saludar.class
+mx/ihsa/soap/webservice/PerfilWebserviceService.class
+mx/ihsa/soap/webservice/ObjectFactory.class
+mx/ihsa/soap/webservice/ServicioWeb.class
+mx/ihsa/soap/webservice/Insertar.class
+mx/ihsa/soap/webservice/Perfil.class
+mx/ihsa/soap/webservice/SaludarResponse.class
+mx/ihsa/soap/webservice/Listar.class
+mx/ihsa/soap/webservice/ListarResponse.class
+mx/ihsa/soap/webservice/package-info.class

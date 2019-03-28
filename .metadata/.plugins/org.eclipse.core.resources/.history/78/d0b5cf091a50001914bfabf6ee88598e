@@ -1,0 +1,5 @@
+package mx.proyecttest.my.service;
+
+public class UsuarioService {
+
+}

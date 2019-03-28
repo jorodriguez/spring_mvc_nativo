@@ -1,0 +1,20 @@
+package mx.proyecttest.my.repository;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import org.springframework.stereotype.Repository;
+
+import mx.proyecttest.my.model.Usuario;
+
+@Repository
+public interface ProductoRepository extends JpaRepository<Usuario, Integer>{
+	
+	
+	
+}

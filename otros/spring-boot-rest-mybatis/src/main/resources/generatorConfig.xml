@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1">
+    <jdbcConnection connectionURL="jdbc:postgresql://192.168.254.232:5432/curso_spring" 
+    		driverClass="org.postgresql.Driver"
+    		password="ihsa" 
+    		userId="ihsa" />
+    		
+   <javaModelGenerator targetPackage="mx.ihsa.mybatis.model" targetProject="spring-boot-rest-mybatis" />
+	<sqlMapGenerator targetPackage="mx.ihsa.mybatis.xml" targetProject="spring-boot-rest-mybatis" />
+ 	<javaClientGenerator targetPackage="mx.ihsa.mybatis.mapper" targetProject="spring-boot-rest-mybatis" type="XMLMAPPER" />
+    <table schema="public" tableName="%">      
+    </table>
+  </context>
+</generatorConfiguration>

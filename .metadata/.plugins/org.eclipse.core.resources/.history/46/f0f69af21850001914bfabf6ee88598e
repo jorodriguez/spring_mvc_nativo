@@ -1,0 +1,27 @@
+package mx.proyecttest.my.repository;
+
+//import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import org.springframework.stereotype.Repository;
+
+import mx.proyecttest.my.model.Usuario;
+
+@Repository
+public class ProductoRepository {
+	
+	private List<Usuario> listaUsuarios;
+	
+	public ProductoRepository() {			
+		
+	}
+	
+	public List<Usuario> getListaUsuarios() {
+		//Conect to BD	
+		return null;
+		
+	}
+	
+}

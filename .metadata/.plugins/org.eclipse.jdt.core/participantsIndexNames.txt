@@ -1,0 +1,11 @@
+INDEX VERSION 1.131
+/home/jorodriguez/Documentos/workspace_spring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2550001156.index
+/demo_spring_mvc/src/main/java
+/home/jorodriguez/Documentos/workspace_spring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/265072000.index
+/spring-mvc-ejemplo/src/main/resources
+/home/jorodriguez/Documentos/workspace_spring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2100473661.index
+/spring-mvc-ejemplo/src/main/resources
+/home/jorodriguez/Documentos/workspace_spring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/371898966.index
+/spring-mvc/src/main/java
+/home/jorodriguez/Documentos/workspace_spring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2694640329.index
+/spring-mvc/src/main/java

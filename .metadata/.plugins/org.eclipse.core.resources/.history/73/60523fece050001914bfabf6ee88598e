@@ -1,0 +1,21 @@
+package mx.ihsa.springmvc.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import mx.ihsa.springmvc.model.Usuario;
+
+@Repository
+public class UsuarioDAO {
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+
+	public int insertUsuaro(Usuario usuaro) {
+		return jdbcTemplate.update("insert into login  (usuario, password, nombre, apaterno, amaterno) values ('" + usuaro.getUsuario() + "', '" + usuaro.getPassword()
+				+ "', '" + usuaro.getNombre() + "', '" + usuaro.getPaterno() + "', '" + usuaro.getMaterno() + "')");
+
+	}
+
+}

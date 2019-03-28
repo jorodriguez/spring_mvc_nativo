@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      >
+	
+	<h:head>
+	</h:head>
+	<h:body>		
+		<h:form>
+			<p:keyboard></p:keyboard>
+			<br/>
+			<p:signature style="width:400px;height:300px;"  ></p:signature>
+			<br/>			
+			<p:password feedback="true"  goodLabel="Bueno!" 
+										 weakLabel="Inseguro!"
+										 strongLabel="Excelente"
+										 placeholder="Password"
+			/> 
+			<br/>
+			<p:editor  />
+			<br/>
+			<p:rating stars="0"></p:rating>
+			<br/>
+			<p:inputMask mask="(99) 999999-99999"></p:inputMask>
+			<br/>
+			<p:colorPicker />
+			
+		</h:form>
+	</h:body>	
+</html>
