@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Listado</title>
+</head>
+<body>
+
+<h1>Lista de Movimientos</h1>
+
+<div>
+<table border="1"> 
+
+	
+	<tr>
+	<td>idMovCta</td>
+	<td>Cuenta</td>
+	<td>Tipomovimiento</td>
+	<td>Fecha</td>
+	<td>Monto</td>
+	<td>Desc</td>
+	<td>Delete</td>
+	</tr>
+	
+	<tr th:each="mov : ${listaMovimientos}">
+	<td th:utext="${mov.idMovCta}"></td>
+	<td th:utext="${mov.cuenta.noCta}"></td>
+	<td th:utext="${mov.tipomovimiento.descTipMov}"></td>
+	<td th:utext="${mov.fchCre}"></td>
+	<td th:utext="${mov.mntMov}"></td>
+	<td th:utext="${mov.dscMov}"></td>
+	<td><a th:href="@{/delete/{id}(id=${mov.idMovCta})}">Delete</a></td>
+	<td><a th:href="@{/edit/{id}(id=${mov.idMovCta})}">Edit</a></td>
+ 
+
+	
+	
+	
+	</tr>
+
+</table>
+
+<form th:action ="@{/insertar}" method="GET">
+<button type="submit"> Registrar Movimiento</button>
+
+</form>
+</div>
+
+</body>
+</html>
